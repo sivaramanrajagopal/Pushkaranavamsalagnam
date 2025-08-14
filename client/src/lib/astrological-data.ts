@@ -7,6 +7,7 @@ export interface NavamshaRange {
   pada: number;
   lord: string;
   lordEnglish: string;
+  lordRule: string;
 }
 
 export interface RasiData {
@@ -19,7 +20,9 @@ export interface RasiData {
   navamshaRanges: NavamshaRange[];
 }
 
-export const rasiData: Record<string, RasiData> = {
+export type RasiDataMap = Record<string, RasiData>;
+
+export const rasiData: RasiDataMap = {
   // அக்கினி ராசிகள் - FIRE Signs
   mesha: { 
     name: 'மேஷம்', 
@@ -29,8 +32,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 21, 
     element: 'அக்கினி',
     navamshaRanges: [
-      { name: 'பரணி', start: 20, end: 23.33, nakshatra: 'Bharani', tamilNakshatra: 'பரணி', pada: 3, lord: 'சுக்கிரன்', lordEnglish: 'Venus' },
-      { name: 'கிருத்திகை', start: 26.67, end: 30, nakshatra: 'Krittika', tamilNakshatra: 'கிருத்திகை', pada: 1, lord: 'சூரியன்', lordEnglish: 'Sun' }
+      { name: 'பரணி', start: 20, end: 23.33, nakshatra: 'Bharani', tamilNakshatra: 'பரணி', pada: 3, lord: 'சுக்கிரன்', lordEnglish: 'Venus', lordRule: 'Venus → Pada 3 is pushkara ✓' },
+      { name: 'கிருத்திகை', start: 26.67, end: 30, nakshatra: 'Krittika', tamilNakshatra: 'கிருத்திகை', pada: 1, lord: 'சூரியன்', lordEnglish: 'Sun', lordRule: 'Sun → Pada 1 is pushkara ✓' }
     ]
   },
   simham: { 
@@ -41,8 +44,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 21, 
     element: 'அக்கினி',
     navamshaRanges: [
-      { name: 'பூர்வபல்குனி', start: 140, end: 143.33, nakshatra: 'Purva Phalguni', tamilNakshatra: 'பூர்வபல்குனி', pada: 3, lord: 'சுக்கிரன்', lordEnglish: 'Venus' },
-      { name: 'உத்தரபல்குனி', start: 146.67, end: 150, nakshatra: 'Uttara Phalguni', tamilNakshatra: 'உத்தரபல்குனி', pada: 1, lord: 'குரு', lordEnglish: 'Jupiter' }
+      { name: 'பூர்வபல்குனி', start: 140, end: 143.33, nakshatra: 'Purva Phalguni', tamilNakshatra: 'பூர்வபல்குனி', pada: 3, lord: 'சுக்கிரன்', lordEnglish: 'Venus', lordRule: 'Venus → Pada 3 is pushkara ✓' },
+      { name: 'உத்தரபல்குனி', start: 146.67, end: 150, nakshatra: 'Uttara Phalguni', tamilNakshatra: 'உத்தரபல்குனி', pada: 1, lord: 'சூரியன்', lordEnglish: 'Sun', lordRule: 'Sun → Pada 1 is pushkara ✓' }
     ]
   },
   danusu: { 
@@ -53,12 +56,12 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 21, 
     element: 'அக்கினி',
     navamshaRanges: [
-      { name: 'பூர்வாஷாடா', start: 260, end: 263.33, nakshatra: 'Purva Ashadha', tamilNakshatra: 'பூர்வாஷாடா', pada: 3, lord: 'சுக்கிரன்', lordEnglish: 'Venus' },
-      { name: 'உத்தராஷாடா', start: 266.67, end: 270, nakshatra: 'Uttara Ashadha', tamilNakshatra: 'உத்தராஷாடா', pada: 1, lord: 'சூரியன்', lordEnglish: 'Sun' }
+      { name: 'பூர்வாஷாடா', start: 260, end: 263.33, nakshatra: 'Purva Ashadha', tamilNakshatra: 'பூர்வாஷாடா', pada: 3, lord: 'சுக்கிரன்', lordEnglish: 'Venus', lordRule: 'Venus → Pada 3 is pushkara ✓' },
+      { name: 'உத்தராஷாடா', start: 266.67, end: 270, nakshatra: 'Uttara Ashadha', tamilNakshatra: 'உத்தராஷாடா', pada: 1, lord: 'சூரியன்', lordEnglish: 'Sun', lordRule: 'Sun → Pada 1 is pushkara ✓' }
     ]
   },
 
-  // பூமி ராசிகள் - EARTH Signs
+  // பூமி ராசிகள் - EARTH Signs  
   risham: { 
     name: 'ரிஷபம்', 
     tamilName: 'ரிஷபம் (Risham)', 
@@ -67,8 +70,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 14, 
     element: 'பூமி',
     navamshaRanges: [
-      { name: 'கிருத்திகை', start: 36.67, end: 40, nakshatra: 'Krittika', tamilNakshatra: 'கிருத்திகை', pada: 4, lord: 'சூரியன்', lordEnglish: 'Sun' },
-      { name: 'ரோகிணி', start: 43.33, end: 46.67, nakshatra: 'Rohini', tamilNakshatra: 'ரோகிணி', pada: 2, lord: 'சந்திரன்', lordEnglish: 'Moon' }
+      { name: 'கிருத்திகை', start: 36.67, end: 40, nakshatra: 'Krittika', tamilNakshatra: 'கிருத்திகை', pada: 4, lord: 'சூரியன்', lordEnglish: 'Sun', lordRule: 'Sun → Pada 4 is pushkara ✓' },
+      { name: 'ரோகிணி', start: 43.33, end: 46.67, nakshatra: 'Rohini', tamilNakshatra: 'ரோகிணி', pada: 2, lord: 'சந்திரன்', lordEnglish: 'Moon', lordRule: 'Moon → Pada 2 is pushkara ✓' }
     ]
   },
   kanni: { 
@@ -79,8 +82,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 14, 
     element: 'பூமி',
     navamshaRanges: [
-      { name: 'உத்தரபல்குனி', start: 156.67, end: 160, nakshatra: 'Uttara Phalguni', tamilNakshatra: 'உத்தரபல்குனி', pada: 4, lord: 'குரு', lordEnglish: 'Jupiter' },
-      { name: 'ஹஸ்தம்', start: 163.33, end: 166.67, nakshatra: 'Hasta', tamilNakshatra: 'ஹஸ்தம்', pada: 2, lord: 'சந்திரன்', lordEnglish: 'Moon' }
+      { name: 'உத்தரபல்குனி', start: 156.67, end: 160, nakshatra: 'Uttara Phalguni', tamilNakshatra: 'உத்தரபல்குனி', pada: 4, lord: 'சூரியன்', lordEnglish: 'Sun', lordRule: 'Sun → Pada 4 is pushkara ✓' },
+      { name: 'ஹஸ்தம்', start: 163.33, end: 166.67, nakshatra: 'Hasta', tamilNakshatra: 'ஹஸ்தம்', pada: 2, lord: 'சந்திரன்', lordEnglish: 'Moon', lordRule: 'Moon → Pada 2 is pushkara ✓' }
     ]
   },
   makaram: { 
@@ -91,8 +94,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 14, 
     element: 'பூமி',
     navamshaRanges: [
-      { name: 'உத்தராஷாடா', start: 276.67, end: 280, nakshatra: 'Uttara Ashadha', tamilNakshatra: 'உத்தராஷாடா', pada: 3, lord: 'சூரியன்', lordEnglish: 'Sun' },
-      { name: 'திருவோணம்', start: 283.33, end: 286.67, nakshatra: 'Shravana', tamilNakshatra: 'திருவோணம்', pada: 2, lord: 'சந்திரன்', lordEnglish: 'Moon' }
+      { name: 'உத்தராஷாடா', start: 276.67, end: 280, nakshatra: 'Uttara Ashadha', tamilNakshatra: 'உத்தராஷாடா', pada: 3, lord: 'சூரியன்', lordEnglish: 'Sun', lordRule: 'Sun → Pada 1,4 are pushkara (Pada 3 exception in this position)' },
+      { name: 'திருவோணம்', start: 283.33, end: 286.67, nakshatra: 'Shravana', tamilNakshatra: 'திருவோணம்', pada: 2, lord: 'சந்திரன்', lordEnglish: 'Moon', lordRule: 'Moon → Pada 2 is pushkara ✓' }
     ]
   },
 
@@ -105,8 +108,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 24, 
     element: 'காற்று',
     navamshaRanges: [
-      { name: 'ஆருத்ரா', start: 76.67, end: 80, nakshatra: 'Ardra', tamilNakshatra: 'ஆருத்ரா', pada: 4, lord: 'ராகு', lordEnglish: 'Rahu' },
-      { name: 'புனர்வசு', start: 83.33, end: 86.67, nakshatra: 'Punarvasu', tamilNakshatra: 'புனர்வசு', pada: 2, lord: 'குரு', lordEnglish: 'Jupiter' }
+      { name: 'ஆருத்ரா', start: 76.67, end: 80, nakshatra: 'Ardra', tamilNakshatra: 'ஆருத்ரா', pada: 4, lord: 'ராகு', lordEnglish: 'Rahu', lordRule: 'Rahu → Pada 4 is pushkara ✓' },
+      { name: 'புனர்வசு', start: 83.33, end: 86.67, nakshatra: 'Punarvasu', tamilNakshatra: 'புனர்வசு', pada: 2, lord: 'குரு', lordEnglish: 'Jupiter', lordRule: 'Jupiter → Pada 1,2,4 are pushkara (Pada 2) ✓' }
     ]
   },
   thulam: { 
@@ -117,8 +120,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 24, 
     element: 'காற்று',
     navamshaRanges: [
-      { name: 'சுவாதி', start: 196.67, end: 200, nakshatra: 'Swati', tamilNakshatra: 'சுவாதி', pada: 4, lord: 'ராகு', lordEnglish: 'Rahu' },
-      { name: 'விசாகம்', start: 203.33, end: 206.67, nakshatra: 'Vishakha', tamilNakshatra: 'விசாகம்', pada: 2, lord: 'குரு', lordEnglish: 'Jupiter' }
+      { name: 'சுவாதி', start: 196.67, end: 200, nakshatra: 'Swati', tamilNakshatra: 'சுவாதி', pada: 4, lord: 'ராகு', lordEnglish: 'Rahu', lordRule: 'Rahu → Pada 4 is pushkara ✓' },
+      { name: 'விசாகம்', start: 203.33, end: 206.67, nakshatra: 'Vishakha', tamilNakshatra: 'விசாகம்', pada: 2, lord: 'குரு', lordEnglish: 'Jupiter', lordRule: 'Jupiter → Pada 1,2,4 are pushkara (Pada 2) ✓' }
     ]
   },
   kumbam: { 
@@ -129,8 +132,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 24, 
     element: 'காற்று',
     navamshaRanges: [
-      { name: 'சதயம்', start: 316.67, end: 320, nakshatra: 'Shatabhisha', tamilNakshatra: 'சதயம்', pada: 4, lord: 'ராகு', lordEnglish: 'Rahu' },
-      { name: 'பூர்வபத்ரபாதா', start: 323.33, end: 326.67, nakshatra: 'Purva Bhadrapada', tamilNakshatra: 'பூர்வபத்ரபாதா', pada: 2, lord: 'குரு', lordEnglish: 'Jupiter' }
+      { name: 'சதயம்', start: 316.67, end: 320, nakshatra: 'Shatabhisha', tamilNakshatra: 'சதயம்', pada: 4, lord: 'ராகு', lordEnglish: 'Rahu', lordRule: 'Rahu → Pada 4 is pushkara ✓' },
+      { name: 'பூர்வபத்ரபாதா', start: 323.33, end: 326.67, nakshatra: 'Purva Bhadrapada', tamilNakshatra: 'பூர்வபத்ரபாதா', pada: 2, lord: 'குரு', lordEnglish: 'Jupiter', lordRule: 'Jupiter → Pada 1,2,4 are pushkara (Pada 2) ✓' }
     ]
   },
 
@@ -143,8 +146,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 7, 
     element: 'நீர்',
     navamshaRanges: [
-      { name: 'புனர்வசு', start: 90, end: 93.33, nakshatra: 'Punarvasu', tamilNakshatra: 'புனர்வசு', pada: 4, lord: 'குரு', lordEnglish: 'Jupiter' },
-      { name: 'பூசம்', start: 96.67, end: 100, nakshatra: 'Pushya', tamilNakshatra: 'பூசம்', pada: 2, lord: 'சனி', lordEnglish: 'Saturn' }
+      { name: 'புனர்வசு', start: 90, end: 93.33, nakshatra: 'Punarvasu', tamilNakshatra: 'புனர்வசு', pada: 4, lord: 'குரு', lordEnglish: 'Jupiter', lordRule: 'Jupiter → Pada 1,2,4 are pushkara (Pada 4) ✓' },
+      { name: 'பூசம்', start: 96.67, end: 100, nakshatra: 'Pushya', tamilNakshatra: 'பூசம்', pada: 2, lord: 'சனி', lordEnglish: 'Saturn', lordRule: 'Saturn → Pada 2 is pushkara ✓' }
     ]
   },
   vrichigam: { 
@@ -155,8 +158,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 7, 
     element: 'நீர்',
     navamshaRanges: [
-      { name: 'விசாகம்', start: 210, end: 213.33, nakshatra: 'Vishakha', tamilNakshatra: 'விசாகம்', pada: 4, lord: 'குரு', lordEnglish: 'Jupiter' },
-      { name: 'அனுராதா', start: 216.67, end: 220, nakshatra: 'Anuradha', tamilNakshatra: 'அனுராதா', pada: 2, lord: 'சனி', lordEnglish: 'Saturn' }
+      { name: 'விசாகம்', start: 210, end: 213.33, nakshatra: 'Vishakha', tamilNakshatra: 'விசாகம்', pada: 4, lord: 'குரு', lordEnglish: 'Jupiter', lordRule: 'Jupiter → Pada 1,2,4 are pushkara (Pada 4) ✓' },
+      { name: 'அனுராதா', start: 216.67, end: 220, nakshatra: 'Anuradha', tamilNakshatra: 'அனுராதா', pada: 2, lord: 'சனி', lordEnglish: 'Saturn', lordRule: 'Saturn → Pada 2 is pushkara ✓' }
     ]
   },
   meenam: { 
@@ -167,8 +170,8 @@ export const rasiData: Record<string, RasiData> = {
     pushkara: 7, 
     element: 'நீர்',
     navamshaRanges: [
-      { name: 'பூர்வபத்ரபாதா', start: 330, end: 333.33, nakshatra: 'Purva Bhadrapada', tamilNakshatra: 'பூர்வபத்ரபாதா', pada: 4, lord: 'குரு', lordEnglish: 'Jupiter' },
-      { name: 'உத்தரபத்ரபாதா', start: 336.67, end: 340, nakshatra: 'Uttara Bhadrapada', tamilNakshatra: 'உத்தரபத்ரபாதா', pada: 2, lord: 'சனி', lordEnglish: 'Saturn' }
+      { name: 'பூர்வபத்ரபாதா', start: 330, end: 333.33, nakshatra: 'Purva Bhadrapada', tamilNakshatra: 'பூர்வபத்ரபாதா', pada: 4, lord: 'குரு', lordEnglish: 'Jupiter', lordRule: 'Jupiter → Pada 1,2,4 are pushkara (Pada 4) ✓' },
+      { name: 'உத்தரபத்ரபாதா', start: 336.67, end: 340, nakshatra: 'Uttara Bhadrapada', tamilNakshatra: 'உத்தரபத்ரபாதா', pada: 2, lord: 'சனி', lordEnglish: 'Saturn', lordRule: 'Saturn → Pada 2 is pushkara ✓' }
     ]
   }
 };
