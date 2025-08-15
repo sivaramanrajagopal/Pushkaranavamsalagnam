@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Clock, Calculator, Star, ChevronDown, ChevronUp, Info, BookOpen, Target, Settings } from 'lucide-react';
 import { rasiData } from '../lib/astrological-data';
-import { calculatePushkaraMuhurtham } from '../lib/calculations';
+import { calculateMuhurtham } from '../lib/calculations';
 
 const TamilMuhurthamCalculator = () => {
   const [sunriseTime, setSunriseTime] = useState('06:01');
